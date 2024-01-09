@@ -1,0 +1,50 @@
+<section class="bcls-section" id="workingSample">
+<h2>Download Links</h2>
+
+<p>You can use the form below to generate a sample MRSS feed either for your own account or for a sample Brightcove account.</p>
+
+<fieldset class="bcls-fieldset"><legend>Input</legend>
+
+<p>If you do not enter account information, a Brightcove sample account will be used.</p>
+
+<p>Account id: <input id="account_id" type="text" value="" placeholder="1752604059001" /></p>
+
+<p>Client id: <input id="client_id" type="text" size="60" value="" placeholder="c5d0a622-5479-46d8-8d8a-5f034b943fab" /></p>
+
+<p>Client secret: <input id="client_secret" type="text" size="60" value="" placeholder="w7NQYu0vUloM4GYYy2SXAxrvyFpt8fwI35qAFZcS13-VIgs0itwKNsAwHOS80sOWKJ1BUwHIvSFG2IbgcxEGKg" /></p>
+
+<p>Search string to select videos (optional - see <a target="_blank" href="https://apis.support.brightcove.com/cms/searching/cms-and-playback-apis-video-search-v2.html">Search for Videos</a>) <input id="searchStr" type="text" placeholder="tags:foo" /></p>
+
+<p>Sort by: <select name="sortSelect" id="sortSelect" style="width:150px;"><option value="updated_at" selected="selected">Date last updated</option><option value="created_at">Date added</option><option value="name">Name</option><option value="reference_id">Reference ID</option><option value="published_at">Date Published</option><option value="schedule_starts_at">Scheduled Start Date</option><option value="schedule_ends_at">Scheduled End Date</option><option value="plays_total">All time plays</option><option value="plays_trailing_week">Plays in the last week</option> </select> <select name="directionSelect" id="directionSelect" style="width:120px;"><option value="-" selected="selected">descending</option><option value="">ascending</option> </select></p>
+
+<p>Number of videos to include: <select name="numberSelect" id="numberSelect" style="width:100px;"><option value="25" selected="selected">25</option><option value="50">50</option><option value="100">100</option><option value="all">all</option> </select></p>
+
+<p><button class="bcls-button" id="makeLinks">Generate the Download Links</button></p>
+</fieldset>
+
+<fieldset class="bcls-fieldset"><legend>Output</legend>
+
+<p id="logger" style="color:rgb(237, 104, 38)">Waiting for input...</p>
+
+<p>Current API request</p>
+
+<pre class="line-numbers">
+<code class="language-json" id="apiRequest">API request will appear here...</code></pre>
+
+<p>Download links</p>
+
+<div id="linksDisplay">&nbsp;</div>
+
+<h4>Videos with No Downloadable Rendition</h4>
+<p>The following videos do not have a downloadable MP4 source.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Video ID</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody id="noDownloadbody"></tbody>
+</table>
+</fieldset>
+</section>
